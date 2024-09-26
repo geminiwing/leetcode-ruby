@@ -18,12 +18,12 @@ end
 
 word1 = 'abc'
 word2 = 'pqr'
-puts merge_alternately(word1, word2)
+puts merge_alternately(word1, word2) # Output: "apbqcr"
 
 word1 = 'ab'
 word2 = 'pqrs'
-puts merge_alternately(word1, word2)
+puts merge_alternately(word1, word2) # Output: "apbqrs"
 
 word1 = 'abcd'
 word2 = 'pq'
-puts merge_alternately(word1, word2)
+puts merge_alternately(word1, word2) # Output: "apbqcd"
