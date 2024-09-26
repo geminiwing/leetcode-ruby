@@ -13,3 +13,17 @@ def merge_alternately(word1, word2)
 
   result
 end
+
+# Test
+
+word1 = 'abc'
+word2 = 'pqr'
+puts merge_alternately(word1, word2)
+
+word1 = 'ab'
+word2 = 'pqrs'
+puts merge_alternately(word1, word2)
+
+word1 = 'abcd'
+word2 = 'pq'
+puts merge_alternately(word1, word2)
