@@ -32,3 +32,21 @@ def move_zeroes(nums)
     end
   end
 end
+
+# test
+
+nums = [0,1,0,3,12]
+move_zeroes(nums)
+p nums # Output: [1,3,12,0,0]
+
+nums = [0]
+move_zeroes(nums)
+p nums # Output: [0]
+
+nums = [1,0]
+move_zeroes(nums)
+p nums # Output: [1,0]
+
+nums = [0,1,0,0,3,12,0]
+move_zeroes(nums)
+p nums # Output: [1,3,12,0,0,0,0]
