@@ -25,3 +25,13 @@ def find_max_average(nums, k)
 
   return top_sum.to_f / k
 end
+
+# test
+
+nums = [1,12,-5,-6,50,3]
+k = 4
+puts find_max_average(nums, k)  # Output: 12.75
+
+nums = [5]
+k = 1
+puts find_max_average(nums, k)  # Output: 5.0
