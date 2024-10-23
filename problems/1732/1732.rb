@@ -10,3 +10,11 @@ def largest_altitude(gain)
 
   highest
 end
+
+# test
+
+gain = [-5,1,5,0,-7]
+puts largest_altitude(gain)
+
+gain = [-4,-3,-2,-1,4,3,2]
+puts largest_altitude(gain)
