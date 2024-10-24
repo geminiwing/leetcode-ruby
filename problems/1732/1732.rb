@@ -14,7 +14,7 @@ end
 # test
 
 gain = [-5,1,5,0,-7]
-puts largest_altitude(gain)
+puts largest_altitude(gain)  # Output: 1
 
 gain = [-4,-3,-2,-1,4,3,2]
-puts largest_altitude(gain)
+puts largest_altitude(gain)  # Output: 0
