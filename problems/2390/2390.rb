@@ -16,3 +16,11 @@ def remove_stars(s)
 
   result
 end
+
+# test
+
+s = "leet**cod*e"
+puts remove_stars(s)  # Output: "leetcode"
+
+s = "erase*****"
+puts remove_stars(s)  # Output: ""
