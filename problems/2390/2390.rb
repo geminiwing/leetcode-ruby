@@ -17,6 +17,20 @@ def remove_stars(s)
   result
 end
 
+# Aleternative solution using String instead of Array
+def remove_stars(s)
+  stack = ""
+  s.each_char do |c|
+    if c == '*'
+      stack.chop! unless stack.empty?
+    else
+      stack << c
+    end
+  end
+
+  stack
+end
+
 # test
 
 s = "leet**cod*e"
