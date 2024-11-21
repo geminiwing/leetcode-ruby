@@ -1,5 +1,6 @@
 # 206. Reverse Linked List - Easy
 
+# iterative solution
 def reverse_list(head)
   return head if head.next.nil?
 
@@ -16,6 +17,23 @@ def reverse_list(head)
   end
 
   return p1
+end
+
+# recurssive solution
+def reverse_list(head)
+  return head if head&.next.nil?
+
+  flip(nil, head)
+end
+
+def flip(prev, curr)
+  next_node = curr.next # save next node
+  curr.next = prev      # flip the next pointer
+  if next_node.nil?
+    curr # This is the last node that will be the new head
+  else
+    flip(curr, next_node)
+  end
 end
 
 # test
