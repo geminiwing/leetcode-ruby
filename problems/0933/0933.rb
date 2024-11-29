@@ -16,3 +16,12 @@ class RecentCounter
     return @q.length
   end
 end
+
+# test
+
+rc = RecentCounter.new
+
+input = [1, 100, 3001, 3002]
+input.each do |i|
+  puts rc.ping(i)  # Output: 1, 2, 3, 3
+end
