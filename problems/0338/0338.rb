@@ -14,3 +14,10 @@ def count_bits(n)
 
   return ans
 end
+
+# tests
+n = 2
+puts count_bits(n).to_s # Output: [0,1,1]
+
+n = 5
+puts count_bits(n).to_s # Output: [0,1,1,2,1,2]
