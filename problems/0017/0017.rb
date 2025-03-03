@@ -29,3 +29,15 @@ def letter_combinations(digits)  # digits is a string of digits 2-9
   return result
 end
 
+# Tests
+digits = '23'
+puts letter_combinations(digits).to_s
+# => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+
+digits = '2'
+puts letter_combinations(digits).to_s
+# => ["a", "b", "c"]
+
+digits = ''
+puts letter_combinations(digits).to_s
+# => []
