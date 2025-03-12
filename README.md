@@ -6,7 +6,7 @@ Solutions for LeetCode problems.
 ## Ruby Essentials for LeetCode Goers
 
 ### Looping Through Index
-Using an index is useful when accessing arrays in a certain order.
+Using an index is useful when accessing arrays forward or backward.
 ```rb
 prices = [7, 1, 5, 3, 6, 4]
 
@@ -56,6 +56,13 @@ a.delete_at(1)   # by index   [1, 3]
 # => 2
 a.delete(3)      # by element [1]
 # => 3
+```
+
+Also useful for finding min, max, or sum.
+```rb
+[1,3].min               # => 1
+[1,3].max               # => 3
+[1,2,3].sum             # => 6
 ```
 
 ### Array Initialization
