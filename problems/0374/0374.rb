@@ -20,3 +20,22 @@ def guessBetween(low, high)
     mid
   end
 end
+
+# Tests
+
+# This function is not needed if running in LeetCode
+def guess(num)
+  $pick <=> num
+end
+
+n = 10
+$pick = 6
+puts guessNumber(n)   # 6
+
+n = 1
+$pick = 1
+puts guessNumber(n)   # 1
+
+n = 2
+$pick = 1
+puts guessNumber(n)   # 1
