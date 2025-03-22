@@ -35,4 +35,19 @@ module BinaryTree
     root
   end
   module_function :build
+
+  def to_array(node)
+    return [] if node.nil?
+  
+    result = []
+    q = [node]
+    while q.compact.any?
+      n = q.shift
+      result << n&.val
+      q << n&.left
+      q << n&.right
+    end
+    result
+  end
+  module_function :to_array
 end
