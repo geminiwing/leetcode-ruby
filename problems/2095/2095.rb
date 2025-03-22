@@ -24,3 +24,22 @@ def delete_middle(head)
   p2.next = p1.next
   head
 end
+
+# Tests
+require_relative '../lib/linked_list.rb'
+
+head = LinkedList::build_list([1,3,4,7,1,2,6])
+head = delete_middle(head)
+LinkedList::print_values(head) # 1 3 4 1 2 6
+
+head = LinkedList::build_list([1, 2, 3, 4])
+head = delete_middle(head)
+LinkedList::print_values(head) # 1 2 4
+
+head = LinkedList::build_list([2, 1])
+head = delete_middle(head)
+LinkedList::print_values(head) # 2
+
+head = LinkedList::build_list([2])
+head = delete_middle(head)
+LinkedList::print_values(head) # nil
