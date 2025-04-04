@@ -95,7 +95,20 @@ No need for a temporary variable when swapping.
 x, y = y, x
 ```
 
-Useful when destructuring an array.
+Arrays are automatically destructured when assigned to multiple variables.
+```rb
+word1, word2 = ['abc', 'abcdef']
+```
+
+Useful when finding the shorter of two given words.
+```rb
+def do_something(word1, word2)
+  short, long = word1.size < word2.size ? [word1, word2] : [word2, word1]
+  ...
+end
+```
+
+Convenient to save and load simple data without using Struct or Hash.
 ```rb
 queue = []
 queue << [y, x, count]    # enqueue
