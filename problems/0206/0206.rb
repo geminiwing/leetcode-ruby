@@ -2,21 +2,19 @@
 
 # iterative solution
 def reverse_list(head)
-  return head if head.next.nil?
+  return head if head&.next.nil?
 
-  p1 = head
-  p2 = p1&.next
-  p3 = p2&.next
+  new_head = nil
+  p = head
 
-  p1.next = nil
-  while !p2.nil?
-    p2.next = p1
-    p1 = p2
-    p2 = p3
-    p3 = p3&.next
+  while p
+    next_node = p.next   # save next node
+    p.next = new_head
+    new_head = p
+    p = next_node
   end
 
-  return p1
+  return new_head
 end
 
 # recurssive solution
