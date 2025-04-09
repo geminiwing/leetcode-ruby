@@ -25,6 +25,25 @@ def delete_middle(head)
   head
 end
 
+# Solution without counting nodes.
+# No advantage in terms of time complexity.
+def delete_middle(head)
+  return nil if head.next.nil?  # when there's only 1 node
+
+  p0 = nil   # follower of p1
+  p1 = head  # pointer to find the middle node
+  p2 = head  # runs 2x faster than p1
+
+  while p2&.next
+    p0 = p1
+    p1 = p1.next
+    p2 = p2.next&.next
+  end
+
+  p0.next = p1.next  # drop the middle node
+  head
+end
+
 # Tests
 require_relative '../lib/linked_list.rb'
 
