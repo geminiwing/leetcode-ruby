@@ -114,3 +114,18 @@ queue = []
 queue << [y, x, count]    # enqueue
 y, x, count = queue.shift # dequeue and destructure
 ```
+
+## Hash
+Chaining may end up with an error.
+```rb
+h = {a: 1, b: {c: 3, d: 4}}
+
+h[:b][:c]  # => 3
+
+h[:f][:c]  # undefined method `[]' for nil (NoMethodError)
+```
+
+Use `dig` for safe navigation
+```rb
+h.dig(:f, :c)  # => nil
+```
