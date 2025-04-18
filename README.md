@@ -129,3 +129,13 @@ Use `dig` for safe navigation
 ```rb
 h.dig(:f, :c)  # => nil
 ```
+
+## String
+
+Use `..` to select a substring. 
+```rb
+str = 'Hello'
+
+rotated_left = str[1..-1] + str[0]   # => "elloH"
+rotated_right = str[-1] + str[0..-2] # => "oHell"
+```
