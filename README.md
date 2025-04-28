@@ -6,7 +6,7 @@ Solutions for LeetCode problems.
 ## Ruby Essentials for LeetCode Goers
 
 ### Looping Through Index
-Using an index is useful when accessing arrays forward or backward.
+Here's how you access arrays using an index.
 ```rb
 prices = [7, 1, 5, 3, 6, 4]
 
@@ -21,7 +21,7 @@ end
 end
 ```
 
-HEADS UP: Ranges do not work in a reverse order
+HEADS UP: Ranges do not work in reverse order
 ```rb
 (0..9).each {|i| puts i}
 # 0 1 2 3 4 5 6 7 8 9
@@ -128,6 +128,52 @@ h[:f][:c]  # undefined method `[]' for nil (NoMethodError)
 Use `dig` for safe navigation
 ```rb
 h.dig(:f, :c)  # => nil
+```
+
+### Using a default value
+
+When a key is missing, hash returns a default value.
+```rb
+h = Hash.new      # Default is nil
+h[:a]             # :a is missing, return nil
+# => nil
+```
+
+You can set a default value.
+```rb
+h = Hash.new(0)   # Default is 0
+h[:a]             # :a is missing, return 0
+# => 0
+h                 # h is empty
+# => {}
+h[:a] += 1        # Assigning h[:a] = h[:a] + 1
+# => 1
+h
+# {:a=>1}
+```
+
+Let's say you want to use an array as a default value, and add elements to it.
+```rb
+h2 = Hash.new([]) # Default is an empty array
+h2[:a]            # :a is missing, return the default []
+# => []
+h2[:a] << 1       # This does not set h2[:a]. It only adds 1 to the default [].
+# => [1]
+h2                # h2 is still empty
+# => {}
+h2[:a]            # :a is still missing, return the default [1]
+# => [1]
+```
+
+This is not what we want. Use a block to define a default behavior to set [] for empty keys
+```rb
+h3 = Hash.new { |h, k| h[k] = [] }
+h3[:a]            # :a is missing, assign [] to :a
+# => []           # h3 is {:a=>[]}
+h3[:a] << 1
+# => [1]          # h3 is {:a=>[1]}
+h3
+# {:a=>[1]}
 ```
 
 ## String
