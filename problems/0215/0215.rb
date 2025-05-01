@@ -4,19 +4,21 @@ require 'algorithms'  # does not require this in LeetCode
 
 # solution using a min heap
 def find_kth_largest(nums, k)
+  # Need a "min" heap to find the kth "largest" element
   heap = Containers::MinHeap.new
 
-  k.times do |i|
-    heap.push nums[i]
-  end
+  # Push the first k elements into the heap
+  nums[0...k].each {|num| heap.push num }
 
-  (k..nums.size-1).each do |i|
-    if nums[i] > heap.min
+  # Now push the rest while popping the smallest to maintain size k
+  nums[k...nums.size].each do |num|
+    if num > heap.min
       heap.pop
-      heap.push nums[i]
+      heap.push num
     end
   end
 
+  # The root of the heap is the kth largest element
   heap.min
 end
 
