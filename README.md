@@ -1,36 +1,9 @@
 # leetcode-ruby
-
 Solutions for LeetCode problems.
-
 
 ## Ruby Essentials for LeetCode Goers
 
-### Looping Through Index
-Here's how you access arrays using an index.
-```rb
-prices = [7, 1, 5, 3, 6, 4]
-
-# Forward scan
-(0..prices.length-1).each do |i|
-  puts prices[i]
-end
-
-# Reverse scan
-(prices.length - 1).downto(0) do |i|
-  puts prices[i]
-end
-```
-
-HEADS UP: Ranges do not work in reverse order
-```rb
-(0..9).each {|i| puts i}
-# 0 1 2 3 4 5 6 7 8 9
-
-(9..0).each {|i| puts i}
-# 9..0 <= WTF?
-```
-
-## Array
+### Array
 Arrays come with stack & queue operations out of the box.
 ```rb
 arr = [1, 2]
@@ -63,6 +36,39 @@ Also useful for finding min, max, or sum.
 [1,3].min               # => 1
 [1,3].max               # => 3
 [1,2,3].sum             # => 6
+```
+
+### Array Iteration 
+
+#### Using elements
+```rb
+prices = [1, 2, 3, 4, 5]
+
+prices.each {|e| puts e}
+# 1 2 3 4 5
+
+prices.reverse.each {|e| puts e}
+# 5 4 3 2 1
+```
+
+#### Using an index
+```rb
+# Forward scan
+(0..prices.length-1).each { |i| puts prices[i] }
+# 1 2 3 4 5
+
+# Reverse scan
+(prices.length - 1).downto(0) { |i| puts prices[i] }
+# 5 4 3 2 1
+```
+
+HEADS UP: Ranges do not work in reverse order
+```rb
+(0..4).each {|i| puts prices[i]}
+# 0 1 2 3 4
+
+(4..0).each {|i| puts prices[i]}  
+# nothing printed
 ```
 
 ### Array Initialization
@@ -130,7 +136,7 @@ Use `dig` for safe navigation
 h.dig(:f, :c)  # => nil
 ```
 
-### Using a default value
+### Hash Default Value
 
 When a key is missing, hash returns a default value.
 ```rb
