@@ -184,10 +184,26 @@ h3
 
 ## String
 
-Use `..` to select a substring. 
+Use `..` to select a substring.
 ```rb
 str = 'Hello'
 
 rotated_left = str[1..-1] + str[0]   # => "elloH"
 rotated_right = str[-1] + str[0..-2] # => "oHell"
+```
+
+## Regex
+
+Use `()` to extract the matches you want.
+```rb
+log = '2024-02-11T07:13:22 method=GET path=/api/v1/users/101/login host=xcom.games.com status=200 latency=10ms'
+regex = /method=(\w+) path=([\/\.\w]+) host=(.*) .* latency=(\d+)ms/
+
+matches = log.match(regex)
+matches[1] # => "GET"
+matches[2] # => "/api/v1/users/101/login"
+matches[3] # => "xcom.games.com"
+matches[4] # => "10"
+```
+
 ```
