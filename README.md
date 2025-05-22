@@ -38,7 +38,7 @@ Also useful for finding min, max, or sum.
 [1,2,3].sum             # => 6
 ```
 
-### Array Iteration 
+### Array Iteration
 
 #### Using elements
 ```rb
@@ -67,7 +67,7 @@ HEADS UP: Ranges do not work in reverse order
 (0..4).each {|i| puts prices[i]}
 # 0 1 2 3 4
 
-(4..0).each {|i| puts prices[i]}  
+(4..0).each {|i| puts prices[i]}
 # nothing printed
 ```
 
@@ -196,12 +196,12 @@ rotated_right = str[-1] + str[0..-2] # => "oHell"
 
 Use `()` to extract the matches you want.
 ```rb
-log = '2024-02-11T07:13:22 method=GET path=/api/v1/users/101/login host=xcom.games.com status=200 latency=10ms'
+log = '2024-02-11T07:13:22 method=GET path=/api/v1/login host=xcom.games.com status=200 latency=10ms'
 regex = /method=(\w+) path=([\/\.\w]+) host=(.*) .* latency=(\d+)ms/
 
 matches = log.match(regex)
 matches[1] # => "GET"
-matches[2] # => "/api/v1/users/101/login"
+matches[2] # => "/api/v1/login"
 matches[3] # => "xcom.games.com"
 matches[4] # => "10"
 ```
