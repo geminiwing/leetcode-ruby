@@ -29,6 +29,21 @@ def reverse_vowels(s)
   s
 end
 
+# Alternative solution using a stack
+def reverse_vowels(s)
+  stack = []
+
+  (0..s.size-1).each do |i|
+    stack << s[i] if VOWELS.include?(s[i])
+  end
+
+  (0..s.size-1).each do |i|
+    s[i] = stack.pop if VOWELS.include?(s[i])
+  end
+
+  s
+end
+
 # Tests
 
 s = "IceCreAm"
