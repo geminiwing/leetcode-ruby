@@ -122,18 +122,21 @@ y, x, count = queue.shift # dequeue and destructure
 ```
 
 ## Hash
-Chaining may end up with an error.
+Chaining doesn't work if the value is `nil`.
 ```rb
 h = {a: 1, b: {c: 3, d: 4}}
 
+h[:b]      # => {:c=>3, :d=>4}
 h[:b][:c]  # => 3
 
-h[:f][:c]  # undefined method `[]' for nil (NoMethodError)
+h[:e]      # => nil
+h[:e][:c]  # undefined method `[]' for nil (NoMethodError)
 ```
 
-Use `dig` for safe navigation
+Use `dig` for safe navigation with `nil`s.
 ```rb
-h.dig(:f, :c)  # => nil
+h.dig(:e)      # => nil
+h.dig(:e, :c)  # => nil
 ```
 
 ### Hash Default Value
