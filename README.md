@@ -144,6 +144,7 @@ h.dig(:e, :c)  # => nil
 When a key is missing, hash returns a default value.
 ```rb
 h = Hash.new      # Default is nil
+
 h[:a]             # :a is missing, return nil
 # => nil
 ```
@@ -151,12 +152,16 @@ h[:a]             # :a is missing, return nil
 You can set a default value.
 ```rb
 h = Hash.new(0)   # Default is 0
+
 h[:a]             # :a is missing, return 0
 # => 0
+
 h                 # h is empty
 # => {}
-h[:a] += 1        # Assigning h[:a] = h[:a] + 1
+
+h[:a] += 1        # Assigning h[:a] = h[:a] + 1 = 0 + 1
 # => 1
+
 h
 # {:a=>1}
 ```
@@ -164,25 +169,40 @@ h
 Let's say you want to use an array as a default value, and add elements to it.
 ```rb
 h2 = Hash.new([]) # Default is an empty array
+
 h2[:a]            # :a is missing, return the default []
 # => []
+
 h2[:a] << 1       # This does not set h2[:a]. It only adds 1 to the default [].
 # => [1]
+
 h2                # h2 is still empty
 # => {}
+
 h2[:a]            # :a is still missing, return the default [1]
 # => [1]
 ```
 
-This is not what we want. Use a block to define a default behavior to set [] for empty keys
+This is not what we want. Use a block to define a default behavior to set [] for empty keys.
 ```rb
 h3 = Hash.new { |h, k| h[k] = [] }
+
 h3[:a]            # :a is missing, assign [] to :a
 # => []           # h3 is {:a=>[]}
+
 h3[:a] << 1
 # => [1]          # h3 is {:a=>[1]}
+
 h3
 # {:a=>[1]}
+```
+
+Alternatively, you can just check if the key exists.
+```rb
+h3 = Hash.new
+
+h3[:a] = [] if h3[:a].nil?
+h3[:a] << 1
 ```
 
 ## String
